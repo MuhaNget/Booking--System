@@ -1,0 +1,98 @@
+.register {
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto 0;
+    padding: 10px;
+    height: 100vh;
+}
+
+.nav{
+    height: 70px;
+    background-color: #003580;
+    display: flex;
+    padding-left: 100px;
+    align-items: center;
+    justify-content: start;
+    margin-bottom: 70px;
+}
+
+.nav h3{
+    color: #fff;
+}
+
+.registerForm {
+    width: 500px;
+    margin: auto;
+    background-color: white;
+    padding: 1rem 2rem 0rem 2rem;
+    width: 500px;
+    border-radius: 10px;
+    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.25), 0 6px 20px 0 rgba(0,0,0,0.19); */
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
+}
+
+h5 {
+    font-size: 1.4rem;
+    color: inherit;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.names{
+    display: flex;
+    gap: .4rem;
+}
+
+.inputs{
+    margin-bottom: 0;
+}
+
+label {
+    text-align: left;
+    display: block;
+    margin: .8rem 0 .2rem 0;
+    font-size: medium;
+}
+
+select, .inputs {
+    width: 100%;
+    padding: 15px 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    display: block;
+}
+
+.registerButton {
+    background-color: #003580;
+    color: #fff;
+    font-size: 1.25rem;
+    border: 0;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    letter-spacing: .05rem;
+}
+
+.registerButton:hover{
+    background-color: #0071c2;
+    color: #fff;
+}
+
+.foot {
+    text-align: center;
+    padding: .9rem;
+    font-size: medium;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* p{
+    padding: 20px;
+} */

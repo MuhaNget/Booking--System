@@ -1,0 +1,12 @@
+### Register
+POST http://localhost:8000/api/v1/register 
+Content-Type: application/json 
+
+{
+    "fName": "Muha",
+    "mName": "m",
+    "lName": "Nget",
+    "email": "nget@gmail.com",
+    "gender": "Male",
+    "password": "1234"
+}
