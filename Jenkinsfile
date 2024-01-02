@@ -9,12 +9,12 @@ pipeline {
             }
         }
 
-        // stage('Install Dependencies') {
-        //     steps {
-        //         // Install Node.js dependencies
-        //         sh 'npm install'
-        //     }
-        // }
+        stage('Install npm') {
+            steps {
+                // Install Node.js dependencies
+                sh 'sudo apt install npm'
+            }
+        }
 
         // stage('Build') {
         //     steps {
