@@ -22,7 +22,7 @@ pipeline {
             steps {
                 dir('backend') {
                     // Run backend build commands
-                    // sh 'npm install'
+                    sh 'npm install'
                     sh 'npm run build'
 
                     // Build Docker image for the backend
@@ -35,7 +35,7 @@ pipeline {
             steps {
                 dir('frontend') {
                     // Run frontend build commands
-                    // sh 'npm install'
+                    sh 'npm install --legacy-peer-deps'
                     sh 'npm run build'
                     
                     // Build Docker image for the frontend
