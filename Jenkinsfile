@@ -1,6 +1,8 @@
 pipeline {
     agent any
 
+    tools {nodejs "nodejs"}
+
     stages {
         stage('Checkout') {
             steps {
@@ -13,16 +15,8 @@ pipeline {
             steps {
                 // Install Node.js dependencies
                 sh 'sudo apt install npm'
-            }
+                }
         }
-
-        // stage('Build') {
-        //     steps {
-        //         // Build your Node.js application
-        //         sh 'npm run build'
-        //     }
-        // }
-
 
         stage('Backend Build') {
             steps {
