@@ -9,17 +9,31 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies') {
-            steps {
-                // Install Node.js dependencies
-                sh 'npm install'
-            }
-        }
+        // stage('Install Dependencies') {
+        //     steps {
+        //         // Install Node.js dependencies
+        //         sh 'npm install'
+        //     }
+        // }
 
-        stage('Build') {
+        // stage('Build') {
+        //     steps {
+        //         // Build your Node.js application
+        //         sh 'npm run build'
+        //     }
+        // }
+
+
+        stage('Backend Build') {
             steps {
-                // Build your Node.js application
-                sh 'npm run build'
+                dir('backend') {
+                    // Run backend build commands
+                    // sh 'npm install'
+                    sh 'npm run build'
+
+                    // Build Docker image for the backend
+                    sh 'docker build -t backend-image .'
+                }
             }
         }
 
@@ -27,7 +41,7 @@ pipeline {
             steps {
                 dir('frontend') {
                     // Run frontend build commands
-                    sh 'npm install'
+                    // sh 'npm install'
                     sh 'npm run build'
                     
                     // Build Docker image for the frontend
@@ -36,18 +50,6 @@ pipeline {
             }
         }
 
-        stage('Backend Build') {
-            steps {
-                dir('backend') {
-                    // Run backend build commands
-                    sh 'npm install'
-                    sh 'npm run build'
-
-                    // Build Docker image for the backend
-                    sh 'docker build -t backend-image .'
-                }
-            }
-        }
 
         stage('Docker Compose Deploy') {
             steps {
