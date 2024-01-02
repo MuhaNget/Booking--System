@@ -11,12 +11,12 @@ pipeline {
             }
         }
 
-        stage('Install npm') {
-            steps {
-                // Install Node.js dependencies
-                sh 'sudo apt install npm'
-                }
-        }
+        // stage('Install npm') {
+        //     steps {
+        //         // Install Node.js dependencies
+        //         sh 'sudo apt install npm'
+        //         }
+        // }
 
         stage('Backend Build') {
             steps {
