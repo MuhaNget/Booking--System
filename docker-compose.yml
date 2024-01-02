@@ -1,0 +1,41 @@
+version: "3.8"
+
+services:
+  api:
+    restart: always
+    build: ./backend
+    ports:
+      - 8000:8000
+    networks:
+      - shared-network
+    depends_on:
+      - db
+  web:
+    depends_on:
+      - api
+    build: ./frontend
+    ports:
+      - 3000:3000
+    networks:
+      - shared-network
+  db:
+    image: mysql
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=password
+      - MYSQL_DATABASE=bookings
+    ports:
+      - 3307:3306
+    networks:
+      - shared-network
+    volumes:
+      - bookings:/var/lib/mysql
+
+volumes:
+  bookings:
+    driver: local
+
+networks:
+  shared-network:

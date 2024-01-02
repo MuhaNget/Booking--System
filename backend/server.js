@@ -7,15 +7,15 @@ const cors = require("cors");
 const app = express();
 
 // Middlewares
-// app.use(morgan("dev"));
-app.use(cors());
+app.use(morgan("dev"));
 app.use(express.json());
+app.use(cors());
 
 // DB connection
 db.sequelize
-    .authenticate()
-    .then(() => console.log("Connected to db successfully"))
-    .catch(error => console.log(error.message));
+  .authenticate()
+  .then(() => console.log("Connected to db successfully"))
+  .catch((error) => console.log(error.message));
 
 // Port
 const PORT = 8000;
